@@ -11,3 +11,27 @@
 - 보통 강결합된 구조로 사용하게 된다. 약결합으로 사용하려면 함수의 인자로 사용해서 호출한다.
   - 강결합 되어있는 경우 테스트하기 어렵다.
 - typescript에서 javascript로 변환되는 과정에서 `private`가 제거되는데 `SYMBOL`을 사용하여 private처럼 사용할 수 있다.
+
+---
+
+## SOLID 원칙
+
+### Single Responsibility Principle (SRP)
+
+- 하나의 모듈은 하나의 책임을 가져야 한다.
+
+### Open/Closed Principle (OCP)
+
+- 소프트웨어의 모듈은 확장에 대해 열려있고, 변경에 대해 닫혀있어야 한다.
+
+### Interface Segregation Principle (ISP)
+
+- 클라이언트가 사용하지 않는 인터페이스에는 의존하지 않아야 한다.
+
+### Liskov Substitution Principle (LSP)
+
+- 하위 클래스는 상위 클래스의 역할을 대체할 수 있어야 한다.
+
+### Dependency Inversion Principle (DIP)
+
+- 추상성이 높은 클래스와 의존 관계를 맺어야 한다.
