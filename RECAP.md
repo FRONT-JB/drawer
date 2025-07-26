@@ -58,3 +58,47 @@
   - 클라이언트 코드와 구체적인 제품 클래스 간의 결합도 낮춘다.
   - 제품 생성 로직을 한 곳에 집중화한다.
 - 구체적인 클래스를 지정하지 않고도 관련된 객체들을 생성할 수 있다.
+
+## Builder 패턴
+
+- 복잡한 객체를 단계별로 구성하는 디자인 패턴이다.
+
+### DrawerMenuButton에 Builder 패턴 적용 이유
+
+- **복잡한 객체 생성**: DrawerMenuButton과 DrawerMenuInput이 여러 옵션(onClick, onChange, active, value 등)을 가진다.
+- **선택적 매개변수 문제 해결**: 생성자에 모든 매개변수를 넣으면 가독성과 유연성이 떨어진다.
+- **메서드 체이닝**: `new DrawerMenuButton.Builder(menu, "저장").setOnClick(handler).setActive(true).build()` 형태로 직관적 구성한다.
+- **타입별 구분**: DrawerMenuButton과 DrawerMenuInput을 각각 다른 Builder로 관리한다.
+- **확장성**: 새로운 메뉴 요소 타입 추가 시 기존 코드 수정 없이 새 Builder 추가 가능하다.
+
+### 적용 구조
+
+```typescript
+// 추상 Builder 클래스
+abstract class DrawerMenuElementBuilder {
+  abstract build(): DrawerMenuElement;
+}
+
+// 구체적인 Builder들
+DrawerMenuButton.Builder; // 버튼 생성용
+DrawerMenuInput.Builder; // 입력 필드 생성용
+```
+
+### 사용 예시
+
+```typescript
+// 단순 버튼
+const btn = new DrawerMenuButton.Builder(this, "저장").build();
+
+// 옵션이 있는 버튼
+const activeBtn = new DrawerMenuButton.Builder(this, "펜")
+  .setOnClick(handleClick)
+  .setActive(true)
+  .build();
+
+// 입력 필드
+const colorInput = new DrawerMenuInput.Builder(this, "컬러")
+  .setOnChange(handleColorChange)
+  .setValue("#ff0000")
+  .build();
+```

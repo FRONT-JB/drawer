@@ -5,11 +5,24 @@ function main() {
   const factory = ChromeDrawerFactory;
 
   const drawer = factory.createDrawer();
-  const drawerMenu = factory.createDrawerMenu(drawer);
+  const drawerMenu = factory.createDrawerMenu(
+    drawer,
+    document.querySelector("#menu")!
+  );
   const drawerHistory = factory.createDrawerHistory(drawer);
 
   drawer.initialize();
-  drawerMenu.initialize();
+  drawerMenu.initialize([
+    "back",
+    "forward",
+    "color",
+    "pipette",
+    "eraser",
+    "pen",
+    "circle",
+    "rectangle",
+    "save",
+  ]);
   drawerHistory.initialize();
 }
 

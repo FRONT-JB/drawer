@@ -1,4 +1,4 @@
-import Drawer from "./AbstractDrawer";
+import Drawer from "./AbstractDrawer.js";
 
 export default class ChromeDrawer extends Drawer {
   // 메서드가 static이면 선언한 값도 static이어야 함.

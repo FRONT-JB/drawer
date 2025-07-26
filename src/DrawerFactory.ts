@@ -1,8 +1,8 @@
-import Drawer from "./AbstractDrawer";
-import ChromeDrawer from "./ChromeDrawer";
-import { ChromeDrawerHistory, IEDrawerHistory } from "./DrawerHistory";
-import { ChromeDrawerMenu, IEDrawerMenu } from "./DrawerMenu";
-import IEDrawer from "./IEDrawer";
+import Drawer from "./AbstractDrawer.js";
+import ChromeDrawer from "./ChromeDrawer.js";
+import { ChromeDrawerHistory, IEDrawerHistory } from "./DrawerHistory.js";
+import { ChromeDrawerMenu, IEDrawerMenu } from "./DrawerMenu.js";
+import IEDrawer from "./IEDrawer.js";
 
 export abstract class AbstractDrawerFactory {
   // 추상적인 인터페이스를 정의한다.
@@ -11,7 +11,7 @@ export abstract class AbstractDrawerFactory {
     throw new Error("Not implemented");
   }
 
-  static createDrawerMenu(drawer: Drawer) {
+  static createDrawerMenu(drawer: Drawer, dom: HTMLElement) {
     throw new Error("Not implemented");
   }
 
@@ -25,8 +25,11 @@ export class ChromeDrawerFactory extends AbstractDrawerFactory {
     return ChromeDrawer.getInstance();
   }
 
-  static override createDrawerMenu(drawer: Drawer): ChromeDrawerMenu {
-    return ChromeDrawerMenu.getInstance(drawer);
+  static override createDrawerMenu(
+    drawer: Drawer,
+    dom: HTMLElement
+  ): ChromeDrawerMenu {
+    return ChromeDrawerMenu.getInstance(drawer, dom);
   }
 
   static override createDrawerHistory(drawer: Drawer): ChromeDrawerHistory {
@@ -39,8 +42,11 @@ export class IEDrawerFactory extends AbstractDrawerFactory {
     return IEDrawer.getInstance();
   }
 
-  static override createDrawerMenu(drawer: Drawer): IEDrawerMenu {
-    return IEDrawerMenu.getInstance(drawer);
+  static override createDrawerMenu(
+    drawer: Drawer,
+    dom: HTMLElement
+  ): IEDrawerMenu {
+    return IEDrawerMenu.getInstance(drawer, dom);
   }
 
   static override createDrawerHistory(drawer: Drawer): IEDrawerHistory {

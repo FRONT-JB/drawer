@@ -1,4 +1,4 @@
-import Drawer from "./AbstractDrawer";
+import Drawer from "./AbstractDrawer.js";
 export default class ChromeDrawer extends Drawer {
     initialize() { }
     static getInstance() {
