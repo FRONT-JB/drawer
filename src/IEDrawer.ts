@@ -6,7 +6,6 @@ export default class IEDrawer extends Drawer {
   private static instance: IEDrawer;
 
   initialize() {}
-  initializeMenu() {}
 
   static override getInstance() {
     if (!IEDrawer.instance) {

@@ -1,7 +1,6 @@
 import Drawer from "./AbstractDrawer";
 export default class IEDrawer extends Drawer {
     initialize() { }
-    initializeMenu() { }
     static getInstance() {
         if (!IEDrawer.instance) {
             // 인스턴스가 없는 경우에는 인스턴스를 생성

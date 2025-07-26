@@ -6,7 +6,6 @@ export default class ChromeDrawer extends Drawer {
   private static instance: ChromeDrawer;
 
   initialize() {}
-  initializeMenu() {}
 
   static override getInstance() {
     if (!ChromeDrawer.instance) {

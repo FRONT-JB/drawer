@@ -7,7 +7,6 @@ export default abstract class Drawer {
   }
 
   abstract initialize(): void;
-  abstract initializeMenu(): void;
 
   static getInstance() {}
 }
