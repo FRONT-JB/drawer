@@ -78,10 +78,6 @@
 abstract class DrawerMenuElementBuilder {
   abstract build(): DrawerMenuElement;
 }
-
-// 구체적인 Builder들
-DrawerMenuButton.Builder; // 버튼 생성용
-DrawerMenuInput.Builder; // 입력 필드 생성용
 ```
 
 ### 사용 예시
