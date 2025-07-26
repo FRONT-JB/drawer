@@ -1,18 +1,18 @@
-import Drawer from "./AbstractDrawer.js";
-import ChromeDrawer from "./ChromeDrawer.js";
-import { DrawerMenuButton, DrawerMenuInput } from "./DrawerMenuButton.js";
-import IEDrawer from "./IEDrawer.js";
+import Drawer from './AbstractDrawer.js';
+import ChromeDrawer from './ChromeDrawer.js';
+import { DrawerMenuButton, DrawerMenuInput } from './DrawerMenuButton.js';
+import IEDrawer from './IEDrawer.js';
 
 type ButtonType =
-  | "pen"
-  | "circle"
-  | "rectangle"
-  | "eraser"
-  | "back"
-  | "forward"
-  | "save"
-  | "pipette"
-  | "color";
+  | 'pen'
+  | 'circle'
+  | 'rectangle'
+  | 'eraser'
+  | 'back'
+  | 'forward'
+  | 'save'
+  | 'pipette'
+  | 'color';
 
 export abstract class AbstractDrawerMenu {
   drawer: Drawer;
@@ -37,48 +37,48 @@ export class ChromeDrawerMenu extends AbstractDrawerMenu {
 
   drawButtonByType(type: ButtonType) {
     switch (type) {
-      case "back": {
-        const btn = new DrawerMenuButton.Builder(this, "뒤로").build();
+      case 'back': {
+        const btn = new DrawerMenuButton.Builder(this, '뒤로').build();
         btn.draw();
         return btn;
       }
-      case "forward": {
-        const btn = new DrawerMenuButton.Builder(this, "앞으로").build();
+      case 'forward': {
+        const btn = new DrawerMenuButton.Builder(this, '앞으로').build();
         btn.draw();
         return btn;
       }
-      case "color": {
-        const btn = new DrawerMenuInput.Builder(this, "컬러").build();
+      case 'color': {
+        const btn = new DrawerMenuInput.Builder(this, '컬러').build();
         btn.draw();
         return btn;
       }
-      case "pipette": {
-        const btn = new DrawerMenuButton.Builder(this, "스포이드").build();
+      case 'pipette': {
+        const btn = new DrawerMenuButton.Builder(this, '스포이드').build();
         btn.draw();
         return btn;
       }
-      case "eraser": {
-        const btn = new DrawerMenuButton.Builder(this, "지우개").build();
+      case 'eraser': {
+        const btn = new DrawerMenuButton.Builder(this, '지우개').build();
         btn.draw();
         return btn;
       }
-      case "pen": {
-        const btn = new DrawerMenuButton.Builder(this, "펜").build();
+      case 'pen': {
+        const btn = new DrawerMenuButton.Builder(this, '펜').build();
         btn.draw();
         return btn;
       }
-      case "circle": {
-        const btn = new DrawerMenuButton.Builder(this, "원").build();
+      case 'circle': {
+        const btn = new DrawerMenuButton.Builder(this, '원').build();
         btn.draw();
         return btn;
       }
-      case "rectangle": {
-        const btn = new DrawerMenuButton.Builder(this, "사각형").build();
+      case 'rectangle': {
+        const btn = new DrawerMenuButton.Builder(this, '사각형').build();
         btn.draw();
         return btn;
       }
-      case "save": {
-        const btn = new DrawerMenuButton.Builder(this, "저장").build();
+      case 'save': {
+        const btn = new DrawerMenuButton.Builder(this, '저장').build();
         btn.draw();
         return btn;
       }

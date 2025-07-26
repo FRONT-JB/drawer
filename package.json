@@ -3,9 +3,12 @@
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "format": "prettier --write \"**/*.{ts,tsx}\" --ignore-path .prettierignore",
+    "format:check": "prettier --check \"**/*.{ts,tsx}\" --ignore-path .prettierignore"
   },
   "devDependencies": {
+    "prettier": "^3.6.2",
     "typescript": "^5.8.3"
   }
 }

@@ -1,6 +1,6 @@
-import Drawer from "./AbstractDrawer.js";
-import ChromeDrawer from "./ChromeDrawer.js";
-import IEDrawer from "./IEDrawer.js";
+import Drawer from './AbstractDrawer.js';
+import ChromeDrawer from './ChromeDrawer.js';
+import IEDrawer from './IEDrawer.js';
 
 export abstract class AbstractDrawerHistory {
   drawer: Drawer;
