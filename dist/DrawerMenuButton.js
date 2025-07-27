@@ -17,11 +17,11 @@ export class DrawerMenuInput extends DrawerMenuElement {
         this.value = value;
     }
     draw() {
-        const input = document.createElement("input");
+        const input = document.createElement('input');
         input.title = this.name;
-        input.type = "color";
+        input.type = 'color';
         if (this.onChange) {
-            input.addEventListener("change", this.onChange.bind(this));
+            input.addEventListener('change', this.onChange.bind(this));
         }
         this.menu.dom.append(input);
     }
@@ -50,10 +50,10 @@ export class DrawerMenuButton extends DrawerMenuElement {
         this.active = active;
     }
     draw() {
-        const button = document.createElement("button");
+        const button = document.createElement('button');
         button.textContent = this.name;
         if (this.onClick) {
-            button.addEventListener("click", this.onClick.bind(this));
+            button.addEventListener('click', this.onClick.bind(this));
         }
         this.menu.dom.append(button);
     }
